@@ -1,2 +1,0 @@
-# pratikathavale.github.io
-Profile
