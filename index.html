@@ -51,6 +51,22 @@
     }
 
     /* Header */
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Aligns content to the right */
+      gap: 16px;
+      text-align: right;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 145px;
+      border-radius: 10%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: var(--shadow-soft);
+    }
     .header {
       display: flex;
       flex-direction: column;
@@ -103,7 +119,31 @@
     .contact a:hover {
       text-decoration: underline;
     }
-
+    /* Mobile Adjustment */
+    @media (max-width: 719px) {
+      .header {
+        align-items: center;
+        text-align: center;
+      }
+      
+      .header-right {
+        align-items: center; /* Centers image on mobile */
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      /* Reorders image to top on mobile */
+      .header {
+        display: flex;
+        flex-direction: column-reverse; 
+      }
+      
+      /* Ensures specific order inside header-right if needed */
+      .contact {
+        text-align: center;
+      }
+    }
     /* Layout */
     .layout {
       display: grid;
@@ -233,31 +273,31 @@
 <body>
 <main>
   <header class="header">
-  <div class="header-content">
+  <div class="name-role">
+    <h1>Pratik Athavale</h1>
+    <div class="role">Senior Workplace Engineer</div>
+    <p class="summary-tagline">
+      Enabling global workforce productivity through expert management of Google Workspace, Microsoft 365, Jira, Confluence, and Workplace Collaboration tools.
+    </p>
+  </div>
+
+  <div class="header-right">
     <img 
-      src="https://github.com/pratikathavale/pratikathavale.github.io/blob/main/Pratik.jpg?raw=true" 
+      src="./Pratik.jpg" 
       alt="Pratik Athavale" 
       class="profile-pic" 
     />
     
-    <div class="name-role">
-      <h1>Pratik Athavale</h1>
-      <div class="role">Senior Workplace Engineer</div>
-      <p class="summary-tagline">
-        Enabling global workforce productivity through expert management of Google Workspace, Microsoft 365, Jira, Confluence, and Workplace Collaboration tools.
-      </p>
-    </div>
-  </div>
-
-  <div class="contact">
-    <div>Berlin, Germany</div>
-    <div>PH: <a href="tel:+4917641743122">+49 1764 1743122</a></div>
-    <div>Email: <a href="mailto:pratikathavalem@gmail.com">pratikathavalem@gmail.com</a></div>
-    <div>
-      LinkedIn:
-      <a href="https://www.linkedin.com/in/pratik-athavale/" target="_blank" rel="noreferrer">
-        linkedin.com/in/pratik-athavale
-      </a>
+    <div class="contact">
+      <div>Berlin, Germany</div>
+      <div>PH: <a href="tel:+4917641743122">+49 1764 1743122</a></div>
+      <div>Email: <a href="mailto:pratikathavalem@gmail.com">pratikathavalem@gmail.com</a></div>
+      <div>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/pratik-athavale/" target="_blank" rel="noreferrer">
+          linkedin.com/in/pratik-athavale
+        </a>
+      </div>
     </div>
   </div>
 </header>
